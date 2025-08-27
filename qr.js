@@ -133,7 +133,7 @@ router.get('/', async (req, res) => {
                         
                         
                         // Read the session file
-                        const sessionKnight = fs.readFileSync(dirs + '/creds.json');
+                        const sessionMEGAMD = fs.readFileSync(dirs + '/creds.json');
                         
                         // Get the user's JID from the session
                         const userJid = Object.keys(sock.authState.creds.me || {}).length > 0 
@@ -143,7 +143,7 @@ router.get('/', async (req, res) => {
                         if (userJid) {
                             // Send session file to user
                             await sock.sendMessage(userJid, {
-                                document: sessionKnight,
+                                document: sessionMEGAMD,
                                 mimetype: 'application/json',
                                 fileName: 'creds.json'
                             });
@@ -151,17 +151,17 @@ router.get('/', async (req, res) => {
                             
                             // Send video thumbnail with caption
                             await sock.sendMessage(userJid, {
-                                image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
-                                caption: `🎬 *KnightBot MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/-oz_u1iMgf8`
+                                image: { url: 'https://cdn.kordai.biz.id/serve/HlEHZd6pgErX.jpg' },
+                                caption: `🎬 *MEGA-MD V2.0 Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtube.com/@techmoto-m9f?si=SsbnIsJdAYQiuq0M`
                             });
                             console.log("🎬 Video guide sent successfully");
                             
                             // Send warning message
                             await sock.sendMessage(userJid, {
                                 text: `⚠️Do not share this file with anybody⚠️\n 
-┌┤✑  Thanks for using Knight Bot
+┌┤✑  Thanks for using MEGA-MD
 │└────────────┈ ⳹        
-│©2024 Mr Unique Hacker 
+│©2024 evil heatless Hacker 
 └─────────────────┈ ⳹\n\n`
                             });
                         } else {
