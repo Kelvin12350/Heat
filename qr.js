@@ -133,7 +133,7 @@ router.get('/', async (req, res) => {
                         
                         
                         // Read the session file
-                        const sessionMEGAMD = fs.readFileSync(dirs + '/creds.json');
+                        const sessionMEGA-MD = fs.readFileSync(dirs + '/creds.json');
                         
                         // Get the user's JID from the session
                         const userJid = Object.keys(sock.authState.creds.me || {}).length > 0 
@@ -143,7 +143,7 @@ router.get('/', async (req, res) => {
                         if (userJid) {
                             // Send session file to user
                             await sock.sendMessage(userJid, {
-                                document: sessionMEGAMD,
+                                document: sessionMEGA-MD,
                                 mimetype: 'application/json',
                                 fileName: 'creds.json'
                             });
